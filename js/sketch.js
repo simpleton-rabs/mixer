@@ -112,7 +112,8 @@ function soundLevels() {
 }
 
 function draw() {
-  background(255);
+  // background(255);
+  background(255, 0, 255);
   fill(255, 0, 255);
   textFont("Verdana", 16);
   //title
