@@ -7,8 +7,11 @@ let mixSlider, speedSlider1, speedSlider2;
 let sound1, sound2, sound1Amp, sound2Amp, level1, level2;
 function preload() {
   soundFormats("mp3");
-  sound1 = loadSound("./../sound/sitarm.mp3");
-  sound2 = loadSound("./../sound/sitarr.mp3");
+  // sound1 = loadSound("./../sound/sitarm.mp3");
+  // sound2 = loadSound("./../sound/sitarr.mp3");
+  sound1 = loadSound("/sound/sitarm.mp3");
+  sound2 = loadSound("/sound/sitarr.mp3");
+
 }
 
 function setup() {
@@ -54,6 +57,8 @@ function setup() {
   sound2Amp = new p5.Amplitude();
   sound1Amp.setInput(sound1);
   sound2Amp.setInput(sound2);
+  
+  console.log("setting up fine");
 }
 
 //function plays or stops sound if button pressed
@@ -72,24 +77,31 @@ function startPause() {
 //function loads reflective sounds
 function loadReflective() {
   reset();
-  sound1 = loadSound("./../sound/sitarm.mp3");
-  sound2 = loadSound("./../sound/sitarr.mp3");
+  // sound1 = loadSound("./../sound/sitarm.mp3");
+  // sound2 = loadSound("./../sound/sitarr.mp3");
+  sound1 = loadSound("/sound/sitarm.mp3");
+  sound2 = loadSound("/sound/sitarr.mp3");
+
   soundLevels();
 }
 
 //functions loads mysterious sounds
 function loadMysterious() {
   reset();
-  sound1 = loadSound("./../sound/acoustic.mp3");
-  sound2 = loadSound("./../sound/ohandah.mp3");
+  // sound1 = loadSound("./../sound/acoustic.mp3");
+  // sound2 = loadSound("./../sound/ohandah.mp3");
+  sound1 = loadSound("/sound/acoustic.mp3");
+  sound2 = loadSound("/sound/ohandah.mp3");
   soundLevels();
 }
 
 //functions loads out there sounds
 function loadOutThere() {
   reset();
-  sound1 = loadSound("./../sound/rhythm.mp3");
-  sound2 = loadSound("./../sound/slide.mp3");
+  // sound1 = loadSound("./../sound/rhythm.mp3");
+  // sound2 = loadSound("./../sound/slide.mp3");
+  sound1 = loadSound("/sound/rhythm.mp3");
+  sound2 = loadSound("/sound/slide.mp3");
   soundLevels();
 }
 
@@ -155,4 +167,5 @@ function draw() {
 
   text("All sounds Rabi Syed 2024", 10, height - 10);
   //the end
+  console.log("drawingfine");
 }
