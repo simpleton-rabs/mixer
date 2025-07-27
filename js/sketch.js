@@ -1,20 +1,48 @@
+
+
+//variables and preload for sounds default on load
+let sound1, sound2, sound1Amp, sound2Amp, level1, level2;
+
+
+
 // Variables for buttons
 let buttonS, buttonR, buttonM, buttonO;
 //varliables for sliders
 let mixSlider, speedSlider1, speedSlider2;
 
-//variables and preload for sounds default on load
-let sound1, sound2, sound1Amp, sound2Amp, level1, level2;
-function preload() {
+/*function preload() {
   soundFormats("mp3");
   // sound1 = loadSound("./../sound/sitarm.mp3");
   // sound2 = loadSound("./../sound/sitarr.mp3");
   sound1 = loadSound("/sound/sitarm.mp3");
   sound2 = loadSound("/sound/sitarr.mp3");
 
+  console.log("preloaded");
+  console.log(sound1);
+  console.log(sound2);
+}*/
+
+function preload() {
+  sound1 = loadSound('../sound/sitarm.mp3',
+    () => console.log('sound1 loaded'),
+    () => console.error('Failed to load sound1'));
+  
+  sound2 = loadSound('../sound/sitarr.mp3',
+    () => console.log('sound2 loaded'),
+    () => console.error('Failed to load sound2'));
 }
 
+
 function setup() {
+
+
+/*    soundFormats("mp3");
+  // sound1 = loadSound("./../sound/sitarm.mp3");
+  // sound2 = loadSound("./../sound/sitarr.mp3");
+  sound1 = loadSound("/sound/sitarm.mp3");
+  sound2 = loadSound("/sound/sitarr.mp3");
+*/
+
   createCanvas(windowWidth, windowHeight);
   //create buttons
   // Start stop
@@ -79,8 +107,8 @@ function loadReflective() {
   reset();
   // sound1 = loadSound("./../sound/sitarm.mp3");
   // sound2 = loadSound("./../sound/sitarr.mp3");
-  sound1 = loadSound("/sound/sitarm.mp3");
-  sound2 = loadSound("/sound/sitarr.mp3");
+  sound1 = loadSound("../sound/sitarm.mp3");
+  sound2 = loadSound("../sound/sitarr.mp3");
 
   soundLevels();
 }
@@ -90,8 +118,8 @@ function loadMysterious() {
   reset();
   // sound1 = loadSound("./../sound/acoustic.mp3");
   // sound2 = loadSound("./../sound/ohandah.mp3");
-  sound1 = loadSound("/sound/acoustic.mp3");
-  sound2 = loadSound("/sound/ohandah.mp3");
+  sound1 = loadSound("../sound/acoustic.mp3");
+  sound2 = loadSound("../sound/ohandah.mp3");
   soundLevels();
 }
 
@@ -100,8 +128,8 @@ function loadOutThere() {
   reset();
   // sound1 = loadSound("./../sound/rhythm.mp3");
   // sound2 = loadSound("./../sound/slide.mp3");
-  sound1 = loadSound("/sound/rhythm.mp3");
-  sound2 = loadSound("/sound/slide.mp3");
+  sound1 = loadSound("../sound/rhythm.mp3");
+  sound2 = loadSound("../sound/slide.mp3");
   soundLevels();
 }
 
@@ -123,6 +151,11 @@ function soundLevels() {
   level2 = sound2Amp.getLevel();
 }
 
+/*
+function mousePressed() {
+  userStartAudio(); // Resume the AudioContext
+}
+*/
 function draw() {
   // background(255);
   background(255, 0, 255);
